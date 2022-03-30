@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeControllers;
-use App\Http\Controllers\TaskControllers;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,10 @@ use App\Http\Controllers\TaskControllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [TaskControllers::class, 'index'])->name('index');
-Route::get('/search', [HomeControllers::class, 'getSearch'])->name('getSearch');
-Route::get('/add', [HomeControllers::class, 'add'])->name('add');
-Route::get('/postAdd', [HomeControllers::class, 'postAdd'])->name('postAdd');
-Route::post('/postAdd', [HomeControllers::class, 'postAdd'])->name('postAdd');
-Route::get('/update', [HomeControllers::class, 'update'])->name('update');
-Route::get('/postUpdate', [HomeControllers::class, 'postUpdate'])->name('postUpdate');
+Route::get('/', [TaskController::class, 'index'])->name('index');
+Route::get('/search', [TaskController::class, 'getSearch'])->name('getSearch');
+Route::get('/create', [TaskController::class, 'create'])->name('create');
+Route::get('/store', [TaskController::class, 'store'])->name('store');
+Route::post('/store', [TaskController::class, 'store'])->name('store');
+Route::get('/edit', [TaskController::class, 'edit'])->name('edit');
+Route::post('/update', [TaskController::class, 'update'])->name('update');

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-1">
-            <button type="button" class="btn btn-info"><a href="{{route('add')}}" style="color: white">Add</a></button>
+            <button type="button" class="btn btn-info"><a href="{{route('create')}}" style="color: white">Add</a></button>
         </div>
         <div class="col-sm-8">
         </div>
@@ -31,7 +31,7 @@
                 <td>{{$row->id}}</td>
                 <td>{{$row->Task}}</td>
                 <td>
-                    <button type="button" class="btn btn-success"><a href="{{route('update')}}" style="color: white">Update</a></button>
+                    <button type="button" class="btn btn-success"><a href="{{route('edit')}}" style="color: white">Update</a></button>
                     <button type="button" class="btn btn-danger" onclick="deleteTask()">Delete</button>
                 </td>
             </tr>

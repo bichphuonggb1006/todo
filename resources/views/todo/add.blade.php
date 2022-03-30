@@ -18,11 +18,12 @@
                     <h2>Add Task</h2>
                     <hr>
                     <br>
-                    <form action="" method="POST">
+                    <form method="post" action="{{route('index')}}">
+                        @method('PATCH')
                         <div class="form-group">
                             <h4 class="control-label col-sm-2" for="task">Task</h4>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="add_task" placeholder="Enter task" name="add_task">
+                                <input type="text" class="form-control" id="add_task" placeholder="Enter task" name="task">
                                 @csrf
                             </div>
                         </div>
@@ -31,7 +32,7 @@
                             <div class="row">
                                 <div class="col-sm-8"></div>
                                 <div class="col-sm-4">
-                                    <button type="submit" class="btn btn-primary" onclick="add()"><a href="{{route('postAdd')}}" style="color: white">Add</a></button>
+                                    <button type="submit" class="btn btn-primary" onclick="add()"><a href="{{route('store')}}" style="color: white">Add</a></button>
                                     <button type="button" class="btn btn-dark"><a href="{{route('index')}}" style="color: black">Back</a></button>
                                 </div>
                             </div>
