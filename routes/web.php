@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeControllers;
+use App\Http\Controllers\TaskControllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,7 @@ use App\Http\Controllers\HomeControllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [HomeControllers::class, 'index'])->name('index');
+Route::get('/', [TaskControllers::class, 'index'])->name('index');
 Route::get('/search', [HomeControllers::class, 'getSearch'])->name('getSearch');
 Route::get('/add', [HomeControllers::class, 'add'])->name('add');
 Route::get('/postAdd', [HomeControllers::class, 'postAdd'])->name('postAdd');

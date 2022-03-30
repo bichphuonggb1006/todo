@@ -1,12 +1,22 @@
 <?php
-
 namespace App\Http\Controllers;
 
-class HomeControllers extends Controller
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
+class TaskControllers extends Controller
 {
+    /**
+     * Show a list of all of the application's users.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('todo.index');
+        $tasks = DB::table('tasks')->select('*');
+        $tasks = $tasks->get();
+        return view('todo.index', compact('tasks'));
     }
     public function getSearch()
     {
@@ -29,4 +39,3 @@ class HomeControllers extends Controller
         return redirect(route('index'));
     }
 }
-
